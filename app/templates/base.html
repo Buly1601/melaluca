@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+    <link rel= "stylesheet" href= "{{ url_for('static',filename='styles/base.css') }}">
+
+    <title>{{ title }}</title>
+
+    <!-- upper navbar for all subpages -->
+    <div class="navbar_global">
+        <p class="menu_buttons"> <a href="/">- Main Page -</a></p>
+        <div class="sep_line" id="up_men_line"></div>
+        <p class="menu_buttons"> <a href="/projects"> - Maleluca - </a></p>
+        <div class="sep_line" id="up_men_line"></div>
+        <p class="menu_buttons"> <a href="/about"> - About Maleluca - </a></p>
+    </div>
+
+    {% block head %} {% endblock %}
+
+</head>
+<body>
+
+    <!-- jinja global base modifiable for all -->
+    {% block body %} {% endblock %}
+
+</body>
+<script src="{{url_for('static', filename='scripts/carousel.js')}}"></script>
+</html>

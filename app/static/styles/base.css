@@ -1,0 +1,56 @@
+/*
+
+    color palette
+    https://www.color-hex.com/color-palette/70245
+
+*/
+
+.navbar_global {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+    background-color: #63786e;
+}
+
+.menu_buttons {
+    cursor: pointer;
+    font-size: 25px;
+  }
+  
+.menu_buttons:hover {
+text-decoration: underline;
+}
+
+#up_men_line {
+    height: 35px;
+    background-color: white;
+    align-self: center;
+}
+
+:any-link {
+    color: #e8f0a5;
+    text-decoration: none;
+}
+
+body {
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 96vh;
+}
+
+/*
+
+    Global variables
+
+*/
+
+p, h1, h2, h3, h4, h5, h6, .text, input, button {
+    font-family: 'Indie Flower', cursive;
+    color: white;
+}    
+
+.sep_line{
+    width: 0.7px;
+    background-color: black;
+}

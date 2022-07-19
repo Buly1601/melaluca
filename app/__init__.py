@@ -7,41 +7,41 @@ from playhouse.shortcuts import model_to_dict
 
 app = Flask(__name__)
 
-# # setting mysql db
-my_db = MySQLDatabase(os.getenv("MYSQL_DATABASE"),
-                    user=os.getenv("MYSQL_USER"),
-                    password=os.getenv("MYSQL_PASSWORD"),
-                    host=os.getenv("MYSQL_HOST"),
-                    port=3306)
+# # # setting mysql db
+# my_db = MySQLDatabase(os.getenv("MYSQL_DATABASE"),
+#                     user=os.getenv("MYSQL_USER"),
+#                     password=os.getenv("MYSQL_PASSWORD"),
+#                     host=os.getenv("MYSQL_HOST"),
+#                     port=3306)
 
-print(my_db)
+# print(my_db)
 
-class TimelinePost(Model):
-    name = CharField()
-    email = CharField()
-    content = TextField()
-    created_at = DateTimeField(default=datetime.datetime.now)
+# class TimelinePost(Model):
+#     name = CharField()
+#     email = CharField()
+#     content = TextField()
+#     created_at = DateTimeField(default=datetime.datetime.now)
 
-    class Meta:
-        database = my_db
+#     class Meta:
+#         database = my_db
 
-my_db.connect()
-my_db.create_tables([TimelinePost])
+# my_db.connect()
+# my_db.create_tables([TimelinePost])
 
-@app.route("/api/timeline_post", methods=["GET"])
-def get_time_line_post():
-    return {
-        "timeline_posts": [model_to_dict(p) for p in TimelinePost.select().order_by(TimelinePost.created_at.desc())]
-    }
+# @app.route("/api/timeline_post", methods=["GET"])
+# def get_time_line_post():
+#     return {
+#         "timeline_posts": [model_to_dict(p) for p in TimelinePost.select().order_by(TimelinePost.created_at.desc())]
+#     }
 
-@app.route("/api/timeline_post", methods=["POST"])
-def post_time_line_post():
-    name = request.form["name"]
-    email = request.form["email"]
-    content = request.form["content"]
-    timeline_post = TimelinePost.create(name=name, email=email, content=content)
+# @app.route("/api/timeline_post", methods=["POST"])
+# def post_time_line_post():
+#     name = request.form["name"]
+#     email = request.form["email"]
+#     content = request.form["content"]
+#     timeline_post = TimelinePost.create(name=name, email=email, content=content)
 
-    return model_to_dict(timeline_post)
+#     return model_to_dict(timeline_post)
 
 @app.route("/")
 def base():

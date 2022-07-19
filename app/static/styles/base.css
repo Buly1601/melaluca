@@ -5,6 +5,11 @@
 
 */
 
+html {
+    width: 90%;
+    margin: 0%;
+}
+
 .navbar_global {
     display: flex;
     flex-direction: row;
@@ -31,12 +36,6 @@ text-decoration: underline;
 :any-link {
     color: #e8f0a5;
     text-decoration: none;
-}
-
-body {
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 96vh;
 }
 
 /*

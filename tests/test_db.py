@@ -5,7 +5,7 @@ from app import TimelinePost
 MODELS = [TimelinePost]
 
 # use in-memory sqlite for tests
-test_db = SqliteDatabase(":memory:")
+test_db = SqliteDatabase(":memory:", pragmas={"foreign_keys": 1})
 
 class TestTimelinePost(unittest.TestCase):
     def setUp(self):

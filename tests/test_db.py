@@ -37,5 +37,6 @@ class TestTimelinePost(unittest.TestCase):
         email="jane@ex.com", content="hello world!")
         assert second_post.id == 2
         #TODO get timeline posts and assert that they are correct
+        # test
 
         

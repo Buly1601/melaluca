@@ -1,7 +1,7 @@
 import unittest
 from peewee import *
 from app import TimelinePost
-
+##
 MODELS = [TimelinePost]
 
 # use in-memory sqlite for tests
